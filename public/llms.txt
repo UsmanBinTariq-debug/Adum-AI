@@ -1,0 +1,16 @@
+# Adum AI
+
+> AI automation agency helping plumbers, dentists, and real estate agents automate lead response, missed call recovery, and appointment reminders.
+
+## Services
+
+- 24/7 Instant Lead Response
+- AI Voice Receptionist
+- Missed Call Recovery
+- Appointment Reminder & No-Show Recovery
+- Monthly Retainer & Maintenance
+
+## Contact
+
+- Website: https://adumai.com
+- Booking: https://calendly.com/INSERT-CALENDLY-LINK
