@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png.asset.json";
 import { NAV_LINKS, SITE_NAME } from "@/lib/site";
+
+const logoSrc = "/logo.png";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -12,7 +13,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
         <Link to="/" className="flex items-center gap-2" aria-label={`${SITE_NAME} home`}>
           <img
-            src={logo.url}
+            src={logoSrc}
             alt="Adum AI logo — robotic hand holding a glowing AI brain"
             width={40}
             height={40}

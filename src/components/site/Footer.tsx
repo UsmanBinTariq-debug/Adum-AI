@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/logo.png.asset.json";
 import { NAV_LINKS, TAGLINE } from "@/lib/site";
+
+const logoSrc = "/logo.png";
 
 export function Footer() {
   return (
@@ -9,7 +10,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2">
             <img
-              src={logo.url}
+              src={logoSrc}
               alt="Adum AI logo — robotic hand holding a glowing AI brain"
               width={40}
               height={40}

@@ -1,6 +1,6 @@
 export const SITE_URL = "https://adumai.com";
 
-export const CONTACT_EMAIL = "hello@adumai.com";
+export const CONTACT_EMAIL = "contact@adumai.com";
 
 export const SITE_NAME = "Adum AI";
 export const TAGLINE =
