@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
-import { BookCallButton, LinkButton } from "@/components/site/CtaButton";
+import { LinkButton } from "@/components/site/CtaButton";
 import { BLOG_POSTS, breadcrumbSchema, pageMeta } from "@/lib/site";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -90,7 +90,9 @@ function BlogPostPage() {
             <p className="mt-2 text-sm text-muted-foreground">
               We'll show you exactly where inquiries are slipping and what to automate first.
             </p>
-            <BookCallButton className="mt-5 w-full" />
+            <LinkButton to="/contact" variant="primary" className="mt-5 w-full">
+              Contact us
+            </LinkButton>
           </div>
         </aside>
       </div>

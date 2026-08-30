@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
-import teamPhoto from "@/assets/team.jpg";
+
 import { breadcrumbSchema, pageMeta } from "@/lib/site";
 
 const CRUMBS = [
@@ -56,20 +56,6 @@ function AboutPage() {
           were built for tech teams, not for someone under a sink at 8pm. So we packaged the
           whole thing — build, monitoring and optimization — into something that just works.
         </p>
-
-        <figure className="mt-10">
-          <img
-            src={teamPhoto}
-            alt="Team Photo — Replace with real photo of the Adum AI team at work"
-            width={1200}
-            height={800}
-            loading="lazy"
-            className="w-full rounded-xl border border-border object-cover"
-          />
-          <figcaption className="mt-2 text-xs text-muted-foreground">
-            Team Photo — Replace with real photo
-          </figcaption>
-        </figure>
 
         <p className="mt-8 text-sm text-muted-foreground">
           See what we build on the{" "}

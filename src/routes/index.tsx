@@ -18,9 +18,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { BookCallButton, LinkButton } from "@/components/site/CtaButton";
+import { LinkButton } from "@/components/site/CtaButton";
 import { CtaBand, ResponsePromise } from "@/components/site/Sections";
-import teamPhoto from "@/assets/team.jpg";
 import {
   BLOG_POSTS,
   CASE_STUDIES,
@@ -93,8 +92,8 @@ const USPS = [
 
 const STEPS = [
   {
-    title: "Book a free call",
-    body: "20 minutes. We find where leads are leaking out of your business today.",
+    title: "Get in touch",
+    body: "Send us a message. We find where leads are leaking out of your business today.",
   },
   {
     title: "We build your system",
@@ -123,7 +122,9 @@ function Home() {
             that go to whoever answered first.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <BookCallButton />
+            <LinkButton to="/contact" variant="primary">
+              Contact Us
+            </LinkButton>
             <a
               href="#services"
               className="inline-flex items-center justify-center rounded-lg border border-border bg-surface/60 px-6 py-3 text-sm font-semibold hover:border-primary hover:text-primary"
@@ -248,32 +249,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 md:grid-cols-2">
-        <div>
-          <h2 className="text-2xl font-extrabold md:text-4xl">Meet the Team</h2>
-          <p className="mt-4 text-muted-foreground">
-            Adum AI is a small, senior team of automation builders. We work with a limited
-            number of plumbing, dental and real estate clients at a time so every system gets
-            built properly and stays monitored.
-          </p>
-          <p className="mt-3 text-muted-foreground">
-            You talk to the people who build your system — no account managers, no handoffs.
-          </p>
-        </div>
-        <figure>
-          <img
-            src={teamPhoto}
-            alt="Team Photo — Replace with real photo of the Adum AI automation team"
-            width={1200}
-            height={800}
-            loading="lazy"
-            className="w-full rounded-xl border border-border object-cover"
-          />
-          <figcaption className="mt-2 text-xs text-muted-foreground">
-            Team Photo — Replace with real photo
-          </figcaption>
-        </figure>
-      </section>
 
       <section className="border-y border-border bg-surface/40">
         <div className="mx-auto max-w-6xl px-4 py-14">
