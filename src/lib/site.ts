@@ -1,6 +1,5 @@
 export const SITE_URL = "https://adumai.com";
 
-/** TODO: replace with the real contact email when confirmed. */
 export const CONTACT_EMAIL = "hello@adumai.com";
 
 export const SITE_NAME = "Adum AI";
