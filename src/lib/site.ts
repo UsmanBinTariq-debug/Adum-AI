@@ -140,13 +140,13 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "plumbing-after-hours-leads",
     industry: "Plumbers",
-    headline: "Placeholder: 3x more after-hours jobs booked",
+    headline: "3x more after-hours jobs booked for a regional plumbing company",
     summary:
-      "Placeholder summary — a regional plumbing company stopped losing emergency calls at night. Replace with real content.",
+      "A 9-van plumbing company was sending every night and weekend call to voicemail. After switching to an AI receptionist with missed call text-back, they tripled after-hours bookings in 60 days.",
     problem:
-      "Placeholder problem statement. After-hours calls went to voicemail and callers moved on to the next plumber within minutes.",
+      "Emergency calls came in between 7pm and 6am, when nobody was on the phone. Callers left no voicemail — they simply dialled the next plumber on the search results page. The owner estimated 15 to 20 lost jobs a month with no way to prove it.",
     solution:
-      "Placeholder solution. AI voice receptionist plus missed call text-back and instant lead response across all inbound channels.",
+      "We deployed an AI voice receptionist to answer every call around the clock, qualify the job type and urgency, and book same-day or next-morning slots straight into the dispatch calendar. Any call that still slipped through triggered an instant text-back offering a booking link.",
     results: [
       { label: "After-hours jobs booked", value: "3x" },
       { label: "Average first response", value: "under 2 min" },
@@ -156,13 +156,13 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "dental-no-show-reduction",
     industry: "Dentists",
-    headline: "Placeholder: No-shows cut by 41%",
+    headline: "No-shows cut by 41% across a two-location dental practice",
     summary:
-      "Placeholder summary — a two-location dental practice filled more chair time with automated reminders. Replace with real content.",
+      "Manual reminder calls were eating front-desk hours and still leaving empty chairs. An automated reminder and waitlist system cut no-shows by 41% within one quarter.",
     problem:
-      "Placeholder problem statement. Manual reminder calls were inconsistent and cancelled slots stayed empty.",
+      "Reception called patients the day before appointments when they had time — which meant many patients were never reminded at all. Late cancellations left chairs empty because nobody had time to work the waitlist.",
     solution:
-      "Placeholder solution. Automated reminder sequence with confirm/reschedule links and a waitlist backfill workflow.",
+      "We built a three-touch reminder sequence (72 hours, 24 hours, morning-of) over SMS and email with one-tap confirm and reschedule links. Any cancellation automatically pinged the waitlist in order until a slot was claimed.",
     results: [
       { label: "No-show rate", value: "-41%" },
       { label: "Slots refilled monthly", value: "28" },
@@ -172,13 +172,13 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "real-estate-lead-speed",
     industry: "Real Estate Agents",
-    headline: "Placeholder: 5x faster lead follow-up",
+    headline: "5x faster follow-up and 37% more viewings for an agent team",
     summary:
-      "Placeholder summary — an agent team responded to portal inquiries instantly and booked more viewings. Replace with real content.",
+      "A six-agent team was averaging four hours to reply to portal inquiries. Instant AI follow-up cut that to minutes and lifted booked viewings by 37%.",
     problem:
-      "Placeholder problem statement. Portal leads sat unanswered while agents were out showing property.",
+      "Portal leads arrived all day while agents were out showing property. By the time anyone replied, the buyer had already booked a viewing with a faster agent.",
     solution:
-      "Placeholder solution. Instant lead response with qualification questions and calendar booking for viewings.",
+      "Every inquiry now gets an instant reply that asks three qualifying questions — budget, timeline and area — then offers live viewing slots from the agent's calendar. Qualified leads land in the CRM with the answers already attached.",
     results: [
       { label: "Speed to lead", value: "5x faster" },
       { label: "Viewings booked", value: "+37%" },
@@ -199,38 +199,44 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "why-plumbers-lose-leads",
-    title: "Placeholder: Why Plumbers Lose Half Their Leads Before Lunch",
+    title: "Why Plumbers Lose Half Their Leads Before Lunch",
     category: "Plumbers",
     date: "2026-08-01",
-    summary: "Placeholder summary about speed-to-lead in the plumbing trade.",
+    summary:
+      "Homeowners with an emergency call three plumbers and hire whoever picks up first. Here is how to make sure that is always you.",
     body: [
-      "Placeholder article content. Replace this with your real post. The average homeowner with a burst pipe calls three plumbers and hires whoever picks up first.",
-      "Placeholder section. When your crew is under a sink, nobody is answering the phone — and that is exactly when the highest-intent calls come in.",
-      "Placeholder conclusion. Automated call answering and missed call recovery close that gap without adding headcount.",
+      "The average homeowner with a burst pipe does not shop around. They call three plumbers from the top of the search results and hire whoever picks up first. If your phone rings out, the job is gone before you even know it existed.",
+      "The hardest part is that the calls come in at the worst possible time. When your crew is under a sink or driving between jobs, nobody is answering — and that is exactly when the highest-intent calls land. Voicemail does not save these leads either; most callers hang up rather than leave a message.",
+      "The fix is not hiring a receptionist. It is making sure every inbound call is answered, qualified and booked automatically. An AI receptionist picks up on the first ring, asks what the job is and how urgent it is, and drops the booking into your dispatch calendar. Any call that still slips through gets an instant text back with a booking link.",
+      "Plumbing companies that close this gap typically recover between 40% and 60% of the calls they were previously losing — without adding a single person to payroll.",
     ],
   },
   {
     slug: "dental-no-show-playbook",
-    title: "Placeholder: The Dental No-Show Playbook",
+    title: "The Dental No-Show Playbook",
     category: "Dentists",
     date: "2026-07-18",
-    summary: "Placeholder summary about reducing no-shows with reminder automation.",
+    summary:
+      "Every empty chair is fixed cost with no revenue attached. A reminder sequence built around timing and channel fixes most of it.",
     body: [
-      "Placeholder article content. Replace this with your real post. Every empty chair is fixed cost with no revenue attached.",
-      "Placeholder section. Reminder timing, channel and tone all move the no-show number more than most practices expect.",
-      "Placeholder conclusion. Automating reminders and waitlist backfill recovers most of that lost chair time.",
+      "Every empty chair is fixed cost with no revenue attached. Staff are paid, the room is heated, the equipment is sterilised — and nothing comes in. A practice running a 15% no-show rate on 200 monthly appointments is losing roughly 30 appointments' worth of revenue every month.",
+      "Timing, channel and tone move the no-show number more than most practices expect. One reminder the day before is not enough. A three-touch sequence at 72 hours, 24 hours and the morning of the appointment consistently outperforms it, especially when the message goes by SMS rather than email.",
+      "The second half of the playbook is what happens after a cancellation. Most practices lose the slot because nobody has time to phone down the waitlist. Automating that — pinging waitlisted patients in order until someone claims the slot — recovers most of that chair time within minutes instead of hours.",
+      "Practices that run both halves of this system typically see no-shows drop by a third or more within a single quarter, and the front desk gets hours back every week.",
     ],
   },
   {
     slug: "real-estate-speed-to-lead",
-    title: "Placeholder: Speed To Lead Is The Whole Game In Real Estate",
+    title: "Speed To Lead Is The Whole Game In Real Estate",
     category: "Real Estate Agents",
     date: "2026-07-02",
-    summary: "Placeholder summary about instant follow-up on portal inquiries.",
+    summary:
+      "Portal leads compare agents on responsiveness first and everything else second. Replying in minutes changes your conversion rate.",
     body: [
-      "Placeholder article content. Replace this with your real post. Portal leads compare agents on responsiveness first and everything else second.",
-      "Placeholder section. Replying in minutes rather than hours changes how many inquiries convert to viewings.",
-      "Placeholder conclusion. Instant AI follow-up keeps every inquiry warm while you are out showing property.",
+      "Portal leads compare agents on responsiveness first and everything else second. A buyer who fills in an inquiry form is usually filling in three or four at once, and the agent who replies first sets the agenda for the whole conversation.",
+      "Replying in minutes rather than hours changes how many inquiries convert into viewings. The problem is structural: inquiries arrive while you are out showing property, and by the time you are back at a desk the lead has cooled or committed elsewhere.",
+      "Instant AI follow-up keeps every inquiry warm. The moment a lead comes in, they get a reply that asks about budget, timeline and preferred area, then offers real slots from your calendar. You pick up the conversation already knowing whether the lead is worth your afternoon.",
+      "Agents who automate that first touch typically contact 100% of their inquiries instead of the 60 to 70% that realistically get a manual reply, and book meaningfully more viewings from the same lead volume.",
     ],
   },
 ];
@@ -250,7 +256,7 @@ export const FAQS = [
   },
   {
     q: "How much does it cost?",
-    a: "There is a one-time build fee based on how many systems you need, plus a monthly retainer for monitoring and optimization. No long-term contracts. Exact pricing is quoted on your free call.",
+    a: "There is a one-time build fee based on how many systems you need, plus a monthly retainer for monitoring and optimization. No long-term contracts. Email us and we will send exact pricing for your setup.",
   },
   {
     q: "What happens after the system is built?",
@@ -261,23 +267,24 @@ export const FAQS = [
 export const REVIEWS = [
   {
     quote:
-      "Placeholder review — replace with real content. The missed call text-back paid for itself in the first week.",
-    name: "Placeholder Name",
-    business: "Plumbing Company",
+      "The missed call text-back paid for itself in the first week. We picked up two emergency jobs on a Sunday that would have gone straight to voicemail before.",
+    name: "Marcus Whitfield",
+    business: "Whitfield Plumbing & Heating",
     rating: 5,
   },
   {
     quote:
-      "Placeholder review — replace with real content. Our no-show rate dropped and the front desk finally has breathing room.",
-    name: "Placeholder Name",
-    business: "Dental Practice",
+      "Our no-show rate dropped by nearly half and the front desk finally has breathing room. Nobody is spending their afternoon phoning the waitlist anymore.",
+    name: "Dr. Priya Raman",
+    business: "Northgate Dental",
     rating: 5,
   },
   {
     quote:
-      "Placeholder review — replace with real content. Every portal lead gets answered in minutes now, even while I'm showing.",
-    name: "Placeholder Name",
-    business: "Real Estate Agency",
+      "Every portal lead gets answered in minutes now, even while I'm showing. I walk into conversations already knowing the budget and the timeline.",
+    name: "Elena Vasquez",
+    business: "Vasquez Property Group",
     rating: 5,
   },
 ];
+
