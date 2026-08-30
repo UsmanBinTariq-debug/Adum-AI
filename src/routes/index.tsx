@@ -92,8 +92,8 @@ const USPS = [
 
 const STEPS = [
   {
-    title: "Book a free call",
-    body: "20 minutes. We find where leads are leaking out of your business today.",
+    title: "Get in touch",
+    body: "Send us a message. We find where leads are leaking out of your business today.",
   },
   {
     title: "We build your system",
