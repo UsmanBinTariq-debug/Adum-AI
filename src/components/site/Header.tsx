@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png.asset.json";
 import { NAV_LINKS, SITE_NAME } from "@/lib/site";
-import { BookCallButton } from "./CtaButton";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -38,18 +37,15 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <BookCallButton className="hidden px-4 py-2 sm:inline-flex" />
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            className="rounded-md border border-border p-2 lg:hidden"
-          >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          className="rounded-md border border-border p-2 lg:hidden"
+        >
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
       </div>
 
       {open ? (

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { BookCallButton } from "./CtaButton";
+import { LinkButton } from "./CtaButton";
+import { CONTACT_EMAIL } from "@/lib/site";
 
 export function PageHero({
   eyebrow,
@@ -32,7 +33,7 @@ export function PageHero({
 
 export function CtaBand({
   title = "Ready to stop losing leads?",
-  body = "Book a free 20-minute call. We'll map the leaks in your follow-up and show you exactly what we'd automate first.",
+  body = "Send us a message. We'll map the leaks in your follow-up and show you exactly what we'd automate first.",
 }: {
   title?: string;
   body?: string;
@@ -43,7 +44,9 @@ export function CtaBand({
         <h2 className="text-2xl font-extrabold md:text-4xl">{title}</h2>
         <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">{body}</p>
         <div className="mt-7 flex justify-center">
-          <BookCallButton />
+          <LinkButton to="/contact" variant="primary">
+            Contact us
+          </LinkButton>
         </div>
       </div>
     </section>
@@ -56,7 +59,10 @@ export function ResponsePromise() {
       <div className="mx-auto max-w-6xl px-4 py-6 text-center">
         <p className="text-sm font-semibold md:text-base">
           We respond to every inquiry within 24 hours —{" "}
-          <span className="text-gradient">guaranteed.</span>
+          <span className="text-gradient">guaranteed.</span>{" "}
+          <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:underline">
+            {CONTACT_EMAIL}
+          </a>
         </p>
       </div>
     </section>
