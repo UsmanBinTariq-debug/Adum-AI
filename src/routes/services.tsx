@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
-import { BookCallButton, LinkButton } from "@/components/site/CtaButton";
+import { LinkButton } from "@/components/site/CtaButton";
 import { SERVICES, breadcrumbSchema, pageMeta } from "@/lib/site";
 
 const CRUMBS = [
@@ -32,7 +32,9 @@ function ServicesPage() {
         title="Five systems that make sure nothing gets missed"
         subtitle="Each one is built for the way plumbers, dentists and real estate agents actually work — on a job, in a chair, or out showing a house."
       >
-        <BookCallButton />
+        <LinkButton to="/contact" variant="primary">
+          Contact Us
+        </LinkButton>
       </PageHero>
 
       <div className="mx-auto max-w-4xl px-4 pb-6">
@@ -68,8 +70,9 @@ function ServicesPage() {
               </div>
             </dl>
             <div className="mt-6 flex flex-wrap gap-3">
-              <BookCallButton>Book a Free Call</BookCallButton>
-              <LinkButton to="/contact">Ask a question</LinkButton>
+              <LinkButton to="/contact" variant="primary">
+                Ask a question
+              </LinkButton>
             </div>
           </section>
         ))}

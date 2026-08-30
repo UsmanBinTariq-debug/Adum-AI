@@ -249,32 +249,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 md:grid-cols-2">
-        <div>
-          <h2 className="text-2xl font-extrabold md:text-4xl">Meet the Team</h2>
-          <p className="mt-4 text-muted-foreground">
-            Adum AI is a small, senior team of automation builders. We work with a limited
-            number of plumbing, dental and real estate clients at a time so every system gets
-            built properly and stays monitored.
-          </p>
-          <p className="mt-3 text-muted-foreground">
-            You talk to the people who build your system — no account managers, no handoffs.
-          </p>
-        </div>
-        <figure>
-          <img
-            src={teamPhoto}
-            alt="Team Photo — Replace with real photo of the Adum AI automation team"
-            width={1200}
-            height={800}
-            loading="lazy"
-            className="w-full rounded-xl border border-border object-cover"
-          />
-          <figcaption className="mt-2 text-xs text-muted-foreground">
-            Team Photo — Replace with real photo
-          </figcaption>
-        </figure>
-      </section>
 
       <section className="border-y border-border bg-surface/40">
         <div className="mx-auto max-w-6xl px-4 py-14">
