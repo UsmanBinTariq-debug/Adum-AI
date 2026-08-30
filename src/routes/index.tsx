@@ -18,9 +18,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { BookCallButton, LinkButton } from "@/components/site/CtaButton";
+import { LinkButton } from "@/components/site/CtaButton";
 import { CtaBand, ResponsePromise } from "@/components/site/Sections";
-import teamPhoto from "@/assets/team.jpg";
 import {
   BLOG_POSTS,
   CASE_STUDIES,
@@ -123,7 +122,9 @@ function Home() {
             that go to whoever answered first.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <BookCallButton />
+            <LinkButton to="/contact" variant="primary">
+              Contact Us
+            </LinkButton>
             <a
               href="#services"
               className="inline-flex items-center justify-center rounded-lg border border-border bg-surface/60 px-6 py-3 text-sm font-semibold hover:border-primary hover:text-primary"

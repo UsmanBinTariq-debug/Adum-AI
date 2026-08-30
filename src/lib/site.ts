@@ -1,7 +1,7 @@
 export const SITE_URL = "https://adumai.com";
 
-/** TODO: replace with the real Calendly link when provided. */
-export const CALENDLY_URL = "https://calendly.com/INSERT-CALENDLY-LINK";
+/** TODO: replace with the real contact email when confirmed. */
+export const CONTACT_EMAIL = "hello@adumai.com";
 
 export const SITE_NAME = "Adum AI";
 export const TAGLINE =
