@@ -31,6 +31,7 @@ import {
   TAGLINE,
   pageMeta,
 } from "@/lib/site";
+import { HERO_IMAGE, industryImage } from "@/lib/images";
 
 const icons = {
   clock: Clock,
