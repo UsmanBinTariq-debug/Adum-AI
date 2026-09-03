@@ -156,19 +156,27 @@ function Home() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-10">
+      <section className="mx-auto max-w-6xl px-4 py-14">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
           Built specifically for
         </p>
-        <ul className="mt-4 flex flex-wrap items-center justify-center gap-3">
-          {INDUSTRIES.map((industry) => (
-            <li
-              key={industry}
-              className="rounded-full border border-border bg-surface/60 px-5 py-2 text-sm font-semibold"
-            >
-              {industry}
-            </li>
-          ))}
+        <ul className="mt-6 grid gap-5 md:grid-cols-3">
+          {INDUSTRIES.map((industry) => {
+            const img = industryImage(industry);
+            return (
+              <li key={industry} className="surface-card overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="h-44 w-full object-cover"
+                />
+                <p className="px-5 py-4 text-sm font-semibold">{industry}</p>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
