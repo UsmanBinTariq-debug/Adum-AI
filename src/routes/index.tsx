@@ -132,6 +132,16 @@ function Home() {
               See How It Works
             </a>
           </div>
+
+          <div className="surface-card mx-auto mt-12 max-w-4xl overflow-hidden p-2">
+            <img
+              src={HERO_IMAGE}
+              alt="Adum AI dashboard showing incoming calls and lead replies handled automatically"
+              width={1400}
+              height={1000}
+              className="w-full rounded-lg object-cover"
+            />
+          </div>
         </div>
       </section>
 
