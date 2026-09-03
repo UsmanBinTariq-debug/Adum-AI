@@ -313,20 +313,33 @@ function Home() {
           </LinkButton>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {BLOG_POSTS.map((post) => (
-            <article key={post.slug} className="surface-card flex flex-col p-6">
-              <span className="text-xs font-semibold text-primary">{post.category}</span>
-              <h3 className="mt-2 text-lg font-bold">{post.title}</h3>
-              <p className="mt-2 flex-1 text-sm text-muted-foreground">{post.summary}</p>
-              <Link
-                to="/blog/$slug"
-                params={{ slug: post.slug }}
-                className="mt-4 text-sm font-semibold text-primary hover:underline"
-              >
-                Read More →
-              </Link>
-            </article>
-          ))}
+          {BLOG_POSTS.map((post) => {
+            const img = industryImage(post.category);
+            return (
+              <article key={post.slug} className="surface-card flex flex-col overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="h-40 w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="text-xs font-semibold text-primary">{post.category}</span>
+                  <h3 className="mt-2 text-lg font-bold">{post.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{post.summary}</p>
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: post.slug }}
+                    className="mt-4 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Read More →
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
