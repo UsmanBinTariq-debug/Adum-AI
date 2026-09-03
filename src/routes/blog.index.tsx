@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { BLOG_POSTS, breadcrumbSchema, pageMeta } from "@/lib/site";
+import { industryImage } from "@/lib/images";
 
 const CRUMBS = [
   { name: "Home", path: "/" },
@@ -35,7 +36,9 @@ function BlogPage() {
       <section className="mx-auto max-w-6xl px-4 pb-8">
         <div className="grid gap-5 md:grid-cols-3">
           {BLOG_POSTS.map((post) => (
-            <article key={post.slug} className="surface-card flex flex-col p-6">
+            <article key={post.slug} className="surface-card flex flex-col overflow-hidden">
+                <img src={industryImage(post.category).src} alt={industryImage(post.category).alt} loading="lazy" width={1200} height={800} className="h-40 w-full object-cover" />
+                <div className="flex flex-1 flex-col p-6">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <span className="rounded-full border border-primary/40 px-3 py-1 font-semibold text-primary">
                   {post.category}
@@ -57,6 +60,7 @@ function BlogPage() {
               >
                 Read More →
               </Link>
+              </div>
             </article>
           ))}
         </div>
