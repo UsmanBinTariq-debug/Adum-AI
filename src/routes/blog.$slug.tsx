@@ -63,6 +63,13 @@ function BlogPostPage() {
             </time>
           </div>
           <h1 className="mt-4 text-3xl font-extrabold md:text-4xl">{post.title}</h1>
+          <img
+            src={industryImage(post.category).src}
+            alt={industryImage(post.category).alt}
+            width={1200}
+            height={800}
+            className="mt-6 h-64 w-full rounded-xl border border-border object-cover"
+          />
           <div className="mt-6 space-y-5 text-muted-foreground">
             {post.body.map((paragraph, i) => (
               <p key={i}>{paragraph}</p>
