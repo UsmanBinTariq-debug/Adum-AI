@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
 import { CASE_STUDIES, breadcrumbSchema, pageMeta } from "@/lib/site";
+import { industryImage } from "@/lib/images";
 
 export const Route = createFileRoute("/case-studies/$slug")({
   loader: ({ params }) => {
@@ -55,6 +56,15 @@ function CaseStudyPage() {
         </span>
         <h1 className="mt-4 text-3xl font-extrabold md:text-4xl">{study.headline}</h1>
         <p className="mt-4 text-muted-foreground">{study.summary}</p>
+
+        <img
+          src={industryImage(study.industry).src}
+          alt={industryImage(study.industry).alt}
+          width={1200}
+          height={800}
+          className="mt-8 h-64 w-full rounded-xl border border-border object-cover"
+        />
+
 
         <h2 className="mt-10 text-xl font-bold">The problem</h2>
         <p className="mt-2 text-muted-foreground">{study.problem}</p>

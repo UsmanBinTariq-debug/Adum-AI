@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
+import { HERO_IMAGE, INDUSTRY_IMAGES } from "@/lib/images";
 
 import { breadcrumbSchema, pageMeta } from "@/lib/site";
 
@@ -34,7 +35,18 @@ function AboutPage() {
         subtitle="Adum AI installs the follow-up systems that plumbers, dentists and real estate agents don't have time to run themselves."
       />
 
-      <section className="mx-auto max-w-3xl px-4 pb-4">
+      <section className="mx-auto max-w-5xl px-4">
+        <img
+          src={HERO_IMAGE}
+          alt="Automation dashboard tracking calls and lead replies for service businesses"
+          loading="lazy"
+          width={1400}
+          height={1000}
+          className="h-72 w-full rounded-xl border border-border object-cover"
+        />
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 pb-4 pt-12">
         <h2 className="text-2xl font-extrabold">Who we are</h2>
         <p className="mt-3 text-muted-foreground">
           A small team of automation builders working with a deliberately limited number of

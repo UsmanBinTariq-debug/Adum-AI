@@ -31,6 +31,7 @@ import {
   TAGLINE,
   pageMeta,
 } from "@/lib/site";
+import { HERO_IMAGE, industryImage } from "@/lib/images";
 
 const icons = {
   clock: Clock,
@@ -132,6 +133,16 @@ function Home() {
               See How It Works
             </a>
           </div>
+
+          <div className="surface-card mx-auto mt-12 max-w-4xl overflow-hidden p-2">
+            <img
+              src={HERO_IMAGE}
+              alt="Adum AI dashboard showing incoming calls and lead replies handled automatically"
+              width={1400}
+              height={1000}
+              className="w-full rounded-lg object-cover"
+            />
+          </div>
         </div>
       </section>
 
@@ -146,19 +157,27 @@ function Home() {
         </ul>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-10">
+      <section className="mx-auto max-w-6xl px-4 py-14">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
           Built specifically for
         </p>
-        <ul className="mt-4 flex flex-wrap items-center justify-center gap-3">
-          {INDUSTRIES.map((industry) => (
-            <li
-              key={industry}
-              className="rounded-full border border-border bg-surface/60 px-5 py-2 text-sm font-semibold"
-            >
-              {industry}
-            </li>
-          ))}
+        <ul className="mt-6 grid gap-5 md:grid-cols-3">
+          {INDUSTRIES.map((industry) => {
+            const img = industryImage(industry);
+            return (
+              <li key={industry} className="surface-card overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="h-44 w-full object-cover"
+                />
+                <p className="px-5 py-4 text-sm font-semibold">{industry}</p>
+              </li>
+            );
+          })}
         </ul>
       </section>
 
@@ -212,22 +231,35 @@ function Home() {
           </LinkButton>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {CASE_STUDIES.map((cs) => (
-            <article key={cs.slug} className="surface-card flex flex-col p-6">
-              <span className="w-fit rounded-full border border-primary/40 px-3 py-1 text-xs font-semibold text-primary">
-                {cs.industry}
-              </span>
-              <h3 className="mt-4 text-lg font-bold">{cs.headline}</h3>
-              <p className="mt-2 flex-1 text-sm text-muted-foreground">{cs.summary}</p>
-              <Link
-                to="/case-studies/$slug"
-                params={{ slug: cs.slug }}
-                className="mt-4 text-sm font-semibold text-primary hover:underline"
-              >
-                Read Full Case Study →
-              </Link>
-            </article>
-          ))}
+          {CASE_STUDIES.map((cs) => {
+            const img = industryImage(cs.industry);
+            return (
+              <article key={cs.slug} className="surface-card flex flex-col overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="h-40 w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="w-fit rounded-full border border-primary/40 px-3 py-1 text-xs font-semibold text-primary">
+                    {cs.industry}
+                  </span>
+                  <h3 className="mt-4 text-lg font-bold">{cs.headline}</h3>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{cs.summary}</p>
+                  <Link
+                    to="/case-studies/$slug"
+                    params={{ slug: cs.slug }}
+                    className="mt-4 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Read Full Case Study →
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
@@ -282,20 +314,33 @@ function Home() {
           </LinkButton>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {BLOG_POSTS.map((post) => (
-            <article key={post.slug} className="surface-card flex flex-col p-6">
-              <span className="text-xs font-semibold text-primary">{post.category}</span>
-              <h3 className="mt-2 text-lg font-bold">{post.title}</h3>
-              <p className="mt-2 flex-1 text-sm text-muted-foreground">{post.summary}</p>
-              <Link
-                to="/blog/$slug"
-                params={{ slug: post.slug }}
-                className="mt-4 text-sm font-semibold text-primary hover:underline"
-              >
-                Read More →
-              </Link>
-            </article>
-          ))}
+          {BLOG_POSTS.map((post) => {
+            const img = industryImage(post.category);
+            return (
+              <article key={post.slug} className="surface-card flex flex-col overflow-hidden">
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="h-40 w-full object-cover"
+                />
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="text-xs font-semibold text-primary">{post.category}</span>
+                  <h3 className="mt-2 text-lg font-bold">{post.title}</h3>
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">{post.summary}</p>
+                  <Link
+                    to="/blog/$slug"
+                    params={{ slug: post.slug }}
+                    className="mt-4 text-sm font-semibold text-primary hover:underline"
+                  >
+                    Read More →
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 

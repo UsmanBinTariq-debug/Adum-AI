@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
 import { SERVICES, breadcrumbSchema, pageMeta } from "@/lib/site";
+import { INDUSTRY_IMAGES } from "@/lib/images";
 
 const CRUMBS = [
   { name: "Home", path: "/" },
@@ -37,7 +38,25 @@ function ServicesPage() {
         </LinkButton>
       </PageHero>
 
-      <div className="mx-auto max-w-4xl px-4 pb-6">
+      <section className="mx-auto max-w-6xl px-4">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {Object.entries(INDUSTRY_IMAGES).map(([name, img]) => (
+            <figure key={name} className="surface-card overflow-hidden">
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                width={1200}
+                height={800}
+                className="h-40 w-full object-cover"
+              />
+              <figcaption className="px-5 py-3 text-sm font-semibold">{name}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-4xl px-4 pb-6 pt-4">
         {SERVICES.map((service, i) => (
           <section
             key={service.slug}
