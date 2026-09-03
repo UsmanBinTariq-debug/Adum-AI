@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
 import { SERVICES, breadcrumbSchema, pageMeta } from "@/lib/site";
+import { INDUSTRY_IMAGES } from "@/lib/images";
 
 const CRUMBS = [
   { name: "Home", path: "/" },
