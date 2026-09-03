@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
+import { HERO_IMAGE, INDUSTRY_IMAGES } from "@/lib/images";
 
 import { breadcrumbSchema, pageMeta } from "@/lib/site";
 
