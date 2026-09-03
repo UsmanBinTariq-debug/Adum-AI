@@ -5,7 +5,9 @@ import realEstate from "@/assets/industry-realestate.jpg";
 
 export const HERO_IMAGE = heroDashboard;
 
-export const INDUSTRY_IMAGES: Record<string, { src: string; alt: string }> = {
+type Img = { src: string; alt: string };
+
+export const INDUSTRY_IMAGES: Record<string, Img> = {
   Plumbers: {
     src: plumber,
     alt: "Plumber fixing a sink in a modern home",
@@ -20,6 +22,8 @@ export const INDUSTRY_IMAGES: Record<string, { src: string; alt: string }> = {
   },
 };
 
-export function industryImage(key: string) {
-  return INDUSTRY_IMAGES[key] ?? INDUSTRY_IMAGES["Plumbers"];
+const FALLBACK: Img = { src: plumber, alt: "Service professional at work" };
+
+export function industryImage(key: string): Img {
+  return INDUSTRY_IMAGES[key] ?? FALLBACK;
 }
