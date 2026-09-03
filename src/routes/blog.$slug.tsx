@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { LinkButton } from "@/components/site/CtaButton";
 import { BLOG_POSTS, breadcrumbSchema, pageMeta } from "@/lib/site";
+import { industryImage } from "@/lib/images";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
