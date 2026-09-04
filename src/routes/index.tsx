@@ -20,6 +20,8 @@ import {
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { LinkButton } from "@/components/site/CtaButton";
 import { CtaBand, ResponsePromise } from "@/components/site/Sections";
+import { Reveal } from "@/components/site/Reveal";
+import { ScrollSteps } from "@/components/site/ScrollSteps";
 import {
   BLOG_POSTS,
   CASE_STUDIES,
@@ -243,17 +245,15 @@ function Home() {
       </section>
 
       <section className="border-y border-border bg-surface/40">
-        <div className="mx-auto max-w-6xl px-4 py-14">
-          <h2 className="text-2xl font-extrabold md:text-4xl">How it works</h2>
-          <ol className="mt-8 grid gap-5 md:grid-cols-3">
-            {STEPS.map((step, i) => (
-              <li key={step.title} className="surface-card p-6">
-                <span className="text-sm font-bold text-primary">Step {i + 1}</span>
-                <h3 className="mt-2 text-lg font-bold">{step.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{step.body}</p>
-              </li>
-            ))}
-          </ol>
+        <div className="mx-auto max-w-6xl px-4 pt-14 md:pb-14">
+          <Reveal>
+            <h2 className="text-2xl font-extrabold md:text-4xl">How it works</h2>
+            <p className="mt-3 max-w-2xl text-muted-foreground">
+              Three steps between you and never losing another lead. Keep scrolling — we'll
+              walk you through it.
+            </p>
+          </Reveal>
+          <ScrollSteps steps={STEPS} />
         </div>
       </section>
 
