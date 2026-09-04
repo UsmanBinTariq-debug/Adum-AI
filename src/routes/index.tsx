@@ -31,7 +31,12 @@ import {
   TAGLINE,
   pageMeta,
 } from "@/lib/site";
-import { HERO_IMAGE, industryImage } from "@/lib/images";
+import {
+  BANNER_INDUSTRIES,
+  HERO_CINEMATIC,
+  HERO_IMAGE,
+  industryImage,
+} from "@/lib/images";
 
 const icons = {
   clock: Clock,
@@ -168,6 +173,22 @@ function Home() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <img
+          src={BANNER_INDUSTRIES}
+          alt="A plumber's van, a dental treatment room and a real estate agent's desk, each with an AI-answered call on the phone"
+          loading="lazy"
+          width={1920}
+          height={800}
+          className="h-72 w-full object-cover md:h-96"
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-background/50">
+          <p className="max-w-2xl px-4 text-center text-2xl font-extrabold leading-tight md:text-4xl">
+            One AI system. Every call answered, every lead followed up.
+          </p>
+        </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14">
