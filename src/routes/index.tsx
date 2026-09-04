@@ -168,11 +168,16 @@ function Home() {
 
       <section className="border-y border-border bg-surface/50">
         <ul className="mx-auto grid max-w-6xl gap-4 px-4 py-6 sm:grid-cols-2 lg:grid-cols-4">
-          {USPS.map((usp) => (
-            <li key={usp.label} className="flex items-center gap-2 text-sm font-medium">
+          {USPS.map((usp, i) => (
+            <Reveal
+              as="li"
+              key={usp.label}
+              delay={i * 90}
+              className="flex items-center gap-2 text-sm font-medium"
+            >
               <usp.icon className="size-4 shrink-0 text-primary" aria-hidden="true" />
               {usp.label}
-            </li>
+            </Reveal>
           ))}
         </ul>
       </section>
@@ -198,10 +203,15 @@ function Home() {
           Built specifically for
         </p>
         <ul className="mt-6 grid gap-5 md:grid-cols-3">
-          {INDUSTRIES.map((industry) => {
+          {INDUSTRIES.map((industry, i) => {
             const img = industryImage(industry);
             return (
-              <li key={industry} className="surface-card overflow-hidden">
+              <Reveal
+                as="li"
+                key={industry}
+                delay={i * 120}
+                className="surface-card overflow-hidden"
+              >
                 <img
                   src={img.src}
                   alt={img.alt}
@@ -211,7 +221,7 @@ function Home() {
                   className="h-44 w-full object-cover"
                 />
                 <p className="px-5 py-4 text-sm font-semibold">{industry}</p>
-              </li>
+              </Reveal>
             );
           })}
         </ul>
@@ -224,10 +234,15 @@ function Home() {
           through the cracks.
         </p>
         <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service) => {
+          {SERVICES.map((service, i) => {
             const Icon = icons[service.icon];
             return (
-              <article key={service.slug} className="surface-card flex flex-col p-6">
+              <Reveal
+                as="article"
+                key={service.slug}
+                delay={(i % 3) * 100}
+                className="surface-card flex flex-col p-6"
+              >
                 <Icon className="size-6 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 text-lg font-bold">{service.name}</h3>
                 <p className="mt-2 flex-1 text-sm text-muted-foreground">{service.short}</p>
@@ -238,7 +253,7 @@ function Home() {
                 >
                   Learn More →
                 </Link>
-              </article>
+              </Reveal>
             );
           })}
         </div>
