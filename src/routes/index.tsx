@@ -109,35 +109,48 @@ const STEPS = [
 function Home() {
   return (
     <SiteLayout>
-      <section className="hero-glow">
-        <div className="mx-auto max-w-6xl px-4 py-20 text-center md:py-28">
+      <section className="relative overflow-hidden">
+        <img
+          src={HERO_CINEMATIC}
+          alt="Metallic robotic hand holding a glowing blue circuit-patterned AI brain"
+          width={1920}
+          height={1088}
+          className="absolute inset-0 h-full w-full object-cover object-right"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/20" />
+        <div className="relative mx-auto max-w-6xl px-4 py-24 md:py-36">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
             Plumbers · Dentists · Real Estate Agents
           </p>
-          <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-extrabold leading-[1.08] md:text-6xl">
+          <h1 className="mt-4 max-w-3xl text-4xl font-extrabold leading-[1.08] md:text-6xl">
             {TAGLINE}
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
+          <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
             We install AI systems that answer every call, reply to every lead in under three
             minutes, and book jobs straight into your calendar — so you stop paying for leads
             that go to whoever answered first.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <LinkButton to="/contact" variant="primary">
               Contact Us
             </LinkButton>
             <a
               href="#services"
-              className="inline-flex items-center justify-center rounded-lg border border-border bg-surface/60 px-6 py-3 text-sm font-semibold hover:border-primary hover:text-primary"
+              className="inline-flex items-center justify-center rounded-lg border border-border bg-surface/60 px-6 py-3 text-sm font-semibold backdrop-blur hover:border-primary hover:text-primary"
             >
               See How It Works
             </a>
           </div>
+        </div>
+      </section>
 
-          <div className="surface-card mx-auto mt-12 max-w-4xl overflow-hidden p-2">
+      <section className="border-b border-border bg-surface/30">
+        <div className="mx-auto max-w-6xl px-4 py-12">
+          <div className="surface-card mx-auto max-w-5xl overflow-hidden p-2">
             <img
               src={HERO_IMAGE}
               alt="Adum AI dashboard showing incoming calls and lead replies handled automatically"
+              loading="lazy"
               width={1400}
               height={1000}
               className="w-full rounded-lg object-cover"
