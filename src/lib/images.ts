@@ -1,4 +1,9 @@
 import heroDashboard from "@/assets/hero-dashboard.jpg";
+import heroCinematic from "@/assets/hero-cinematic.jpg";
+import bannerIndustries from "@/assets/banner-industries.jpg";
+
+export const HERO_CINEMATIC = heroCinematic;
+export const BANNER_INDUSTRIES = bannerIndustries;
 import plumber from "@/assets/industry-plumber.jpg";
 import dentist from "@/assets/industry-dentist.jpg";
 import realEstate from "@/assets/industry-realestate.jpg";
