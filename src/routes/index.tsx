@@ -280,10 +280,15 @@ function Home() {
           </LinkButton>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {CASE_STUDIES.map((cs) => {
+          {CASE_STUDIES.map((cs, i) => {
             const img = industryImage(cs.industry);
             return (
-              <article key={cs.slug} className="surface-card flex flex-col overflow-hidden">
+              <Reveal
+                as="article"
+                key={cs.slug}
+                delay={i * 120}
+                className="surface-card flex flex-col overflow-hidden"
+              >
                 <img
                   src={img.src}
                   alt={img.alt}
