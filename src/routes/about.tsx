@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
+import { Reveal } from "@/components/site/Reveal";
 import { HERO_IMAGE, INDUSTRY_IMAGES } from "@/lib/images";
 
 import { breadcrumbSchema, pageMeta } from "@/lib/site";
@@ -36,7 +37,8 @@ function AboutPage() {
       />
 
       <section className="mx-auto max-w-5xl px-4">
-        <img
+        <Reveal>
+          <img
           src={HERO_IMAGE}
           alt="Automation dashboard tracking calls and lead replies for service businesses"
           loading="lazy"

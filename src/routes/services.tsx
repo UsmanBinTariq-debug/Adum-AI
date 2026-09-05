@@ -100,7 +100,7 @@ function ServicesPage() {
                 Ask a question
               </LinkButton>
             </div>
-          </section>
+          </Reveal>
         ))}
       </div>
 
