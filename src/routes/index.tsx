@@ -355,7 +355,8 @@ function Home() {
                     {review.business}
                   </span>
                 </footer>
-              </blockquote>
+                </blockquote>
+              </Reveal>
             ))}
           </div>
         </div>
