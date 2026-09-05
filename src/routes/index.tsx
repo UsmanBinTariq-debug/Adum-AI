@@ -311,7 +311,7 @@ function Home() {
                     Read Full Case Study →
                   </Link>
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>
@@ -341,7 +341,8 @@ function Home() {
           <h2 className="text-2xl font-extrabold md:text-4xl">What clients say</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {REVIEWS.map((review, i) => (
-              <blockquote key={i} className="surface-card p-6">
+              <Reveal key={i} delay={i * 120} className="surface-card p-6">
+                <blockquote>
                 <div className="flex gap-1" aria-label={`${review.rating} out of 5 stars`}>
                   {Array.from({ length: review.rating }).map((_, s) => (
                     <Star key={s} className="size-4 fill-primary text-primary" aria-hidden="true" />
