@@ -57,18 +57,19 @@ function ServicesPage() {
                 className="h-40 w-full object-cover"
               />
               <figcaption className="px-5 py-3 text-sm font-semibold">{name}</figcaption>
-            </figure>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <div className="mx-auto max-w-4xl px-4 pb-6 pt-4">
         {SERVICES.map((service, i) => (
-          <section
+          <Reveal
+            as="section"
             key={service.slug}
-            id={service.slug}
             className="scroll-mt-24 border-t border-border py-12"
           >
+            <div id={service.slug} className="scroll-mt-24" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               Service {String(i + 1).padStart(2, "0")}
             </span>
