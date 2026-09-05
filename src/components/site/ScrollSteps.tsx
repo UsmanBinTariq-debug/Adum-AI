@@ -62,8 +62,8 @@ export function ScrollSteps({ steps }: { steps: ScrollStep[] }) {
 
       {/* Desktop: pinned scroll-driven sequence */}
       <div ref={trackRef} className="relative mt-8 hidden md:block" style={{ height: "260vh" }}>
-        <div className="sticky top-0 flex min-h-screen items-center py-16">
-          <div className="mx-auto grid w-full max-w-6xl grid-cols-[auto_1fr] gap-10 px-4">
+        <div className="sticky top-24 flex h-[calc(100vh-8rem)] flex-col justify-center">
+          {/* Progress rail */}
             {/* Progress rail */}
             <div className="relative flex flex-col items-center">
               <div className="relative h-full w-px overflow-hidden rounded bg-border">
