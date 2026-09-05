@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
+import { Reveal } from "@/components/site/Reveal";
 import { SERVICES, breadcrumbSchema, pageMeta } from "@/lib/site";
 import { INDUSTRY_IMAGES } from "@/lib/images";
 
@@ -40,8 +41,13 @@ function ServicesPage() {
 
       <section className="mx-auto max-w-6xl px-4">
         <div className="grid gap-4 sm:grid-cols-3">
-          {Object.entries(INDUSTRY_IMAGES).map(([name, img]) => (
-            <figure key={name} className="surface-card overflow-hidden">
+          {Object.entries(INDUSTRY_IMAGES).map(([name, img], i) => (
+            <Reveal
+              as="figure"
+              key={name}
+              delay={i * 120}
+              className="surface-card overflow-hidden"
+            >
               <img
                 src={img.src}
                 alt={img.alt}
