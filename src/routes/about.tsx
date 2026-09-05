@@ -45,7 +45,8 @@ function AboutPage() {
           width={1400}
           height={1000}
           className="h-72 w-full rounded-xl border border-border object-cover"
-        />
+          />
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-3xl px-4 pb-4 pt-12">
