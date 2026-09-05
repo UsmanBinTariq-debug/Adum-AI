@@ -67,7 +67,7 @@ function CaseStudiesPage() {
                     Read Full Case Study
                   </Link>
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>
