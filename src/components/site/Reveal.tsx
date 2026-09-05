@@ -15,7 +15,7 @@ export function Reveal({
   className?: string;
   /** Stagger delay in ms */
   delay?: number;
-  as?: "div" | "li" | "article" | "section";
+  as?: "div" | "li" | "article" | "section" | "figure";
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
