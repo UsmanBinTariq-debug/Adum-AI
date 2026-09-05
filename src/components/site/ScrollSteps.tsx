@@ -62,19 +62,17 @@ export function ScrollSteps({ steps }: { steps: ScrollStep[] }) {
 
       {/* Desktop: pinned scroll-driven sequence */}
       <div ref={trackRef} className="relative mt-8 hidden md:block" style={{ height: "260vh" }}>
-        <div className="sticky top-24 flex h-[calc(100vh-8rem)] flex-col justify-center">
-          {/* Progress rail */}
+        <div className="sticky top-24 flex h-[calc(100vh-8rem)] items-center">
+          <div className="flex w-full gap-8">
             {/* Progress rail */}
-            <div className="relative flex flex-col items-center">
-              <div className="relative h-full w-px overflow-hidden rounded bg-border">
-                <div
-                  className="absolute left-0 top-0 w-full bg-gradient-to-b from-primary to-accent transition-[height] duration-150 ease-out"
-                  style={{ height: `${Math.round(progress * 100)}%` }}
-                />
-              </div>
+            <div className="relative w-px shrink-0 overflow-hidden rounded bg-border">
+              <div
+                className="absolute left-0 top-0 w-full bg-gradient-to-b from-primary to-accent transition-[height] duration-150 ease-out"
+                style={{ height: `${Math.round(progress * 100)}%` }}
+              />
             </div>
 
-            <ol className="flex flex-col justify-center gap-8">
+            <ol className="flex flex-1 flex-col gap-8">
               {steps.map((step, i) => {
                 const active = i === activeIndex;
                 const done = i < activeIndex;
