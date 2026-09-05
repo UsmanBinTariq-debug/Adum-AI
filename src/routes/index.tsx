@@ -399,7 +399,7 @@ function Home() {
                     Read More →
                   </Link>
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>
