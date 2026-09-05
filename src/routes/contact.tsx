@@ -51,7 +51,7 @@ function ContactPage() {
           <p className="mt-4 text-xs text-muted-foreground">
             We'll get back to you within 24 hours.
           </p>
-        </div>
+        </Reveal>
       </section>
     </SiteLayout>
   );
