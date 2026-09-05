@@ -370,10 +370,15 @@ function Home() {
           </LinkButton>
         </div>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {BLOG_POSTS.map((post) => {
+          {BLOG_POSTS.map((post, i) => {
             const img = industryImage(post.category);
             return (
-              <article key={post.slug} className="surface-card flex flex-col overflow-hidden">
+              <Reveal
+                as="article"
+                key={post.slug}
+                delay={i * 120}
+                className="surface-card flex flex-col overflow-hidden"
+              >
                 <img
                   src={img.src}
                   alt={img.alt}
