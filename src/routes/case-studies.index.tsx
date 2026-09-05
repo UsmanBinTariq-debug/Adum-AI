@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
+import { Reveal } from "@/components/site/Reveal";
 import { CASE_STUDIES, breadcrumbSchema, pageMeta } from "@/lib/site";
 import { industryImage } from "@/lib/images";
 
@@ -35,10 +36,15 @@ function CaseStudiesPage() {
 
       <section className="mx-auto max-w-6xl px-4 pb-8">
         <div className="grid gap-5 md:grid-cols-3">
-          {CASE_STUDIES.map((cs) => {
+          {CASE_STUDIES.map((cs, i) => {
             const img = industryImage(cs.industry);
             return (
-              <article key={cs.slug} className="surface-card flex flex-col overflow-hidden">
+              <Reveal
+                as="article"
+                key={cs.slug}
+                delay={i * 120}
+                className="surface-card flex flex-col overflow-hidden"
+              >
                 <img
                   src={img.src}
                   alt={img.alt}
@@ -61,7 +67,7 @@ function CaseStudiesPage() {
                     Read Full Case Study
                   </Link>
                 </div>
-              </article>
+              </Reveal>
             );
           })}
         </div>

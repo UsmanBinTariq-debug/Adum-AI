@@ -3,6 +3,7 @@ import { Mail } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero } from "@/components/site/Sections";
+import { Reveal } from "@/components/site/Reveal";
 import { CONTACT_EMAIL, breadcrumbSchema, pageMeta } from "@/lib/site";
 
 const CRUMBS = [
@@ -34,7 +35,7 @@ function ContactPage() {
       />
 
       <section className="mx-auto max-w-6xl px-4 pb-16">
-        <div className="surface-card hero-glow mx-auto max-w-xl px-8 py-12 text-center">
+        <Reveal className="surface-card hero-glow mx-auto max-w-xl px-8 py-12 text-center">
           <Mail className="mx-auto size-8 text-primary" aria-hidden="true" />
           <h2 className="mt-4 text-xl font-bold">Email us</h2>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -50,7 +51,7 @@ function ContactPage() {
           <p className="mt-4 text-xs text-muted-foreground">
             We'll get back to you within 24 hours.
           </p>
-        </div>
+        </Reveal>
       </section>
     </SiteLayout>
   );
