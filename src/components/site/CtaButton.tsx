@@ -10,6 +10,7 @@ const variants = {
   outline:
     "border border-border bg-surface/60 text-foreground px-6 py-3 hover:border-primary hover:text-primary",
   ghost: "text-primary px-2 py-1 hover:underline underline-offset-4",
+  neo: "neo-btn bg-primary text-primary-foreground px-6 py-3 text-base font-extrabold uppercase tracking-wide",
 };
 
 export function LinkButton({
