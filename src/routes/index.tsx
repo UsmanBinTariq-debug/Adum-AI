@@ -11,23 +11,17 @@ import {
   FileCheck,
   Rocket,
 } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { LinkButton } from "@/components/site/CtaButton";
 import { CtaBand, ResponsePromise } from "@/components/site/Sections";
 import { Reveal } from "@/components/site/Reveal";
 import { ScrollSteps } from "@/components/site/ScrollSteps";
+import { Marquee } from "@/components/site/Marquee";
+import { ReviewMarquee } from "@/components/site/ReviewMarquee";
 import {
   BLOG_POSTS,
   CASE_STUDIES,
-  FAQS,
   INDUSTRIES,
-  REVIEWS,
   SERVICES,
   SITE_URL,
   TAGLINE,
