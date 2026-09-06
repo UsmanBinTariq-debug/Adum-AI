@@ -2,6 +2,16 @@ export const SITE_URL = "https://adumai.com";
 
 export const CONTACT_EMAIL = "hello@adumai.com";
 
+/** Leave empty to show a "add your number" placeholder. */
+export const CONTACT_PHONE = "";
+
+/** Leave `url` empty to show a placeholder until the profile exists. */
+export const SOCIAL_LINKS: { label: string; url: string }[] = [
+  { label: "LinkedIn", url: "" },
+  { label: "Facebook", url: "" },
+  { label: "Instagram", url: "" },
+];
+
 export const SITE_NAME = "Adum AI";
 export const TAGLINE =
   "We Help Plumbers, Dentists & Real Estate Agents Stop Losing Leads — 24/7, On Autopilot";

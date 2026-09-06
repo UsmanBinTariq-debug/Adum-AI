@@ -5,29 +5,22 @@ import {
   MessageSquare,
   CalendarCheck,
   Wrench,
-  Star,
   ShieldCheck,
   Zap,
   FileCheck,
   Rocket,
 } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { LinkButton } from "@/components/site/CtaButton";
 import { CtaBand, ResponsePromise } from "@/components/site/Sections";
 import { Reveal } from "@/components/site/Reveal";
 import { ScrollSteps } from "@/components/site/ScrollSteps";
+import { Marquee } from "@/components/site/Marquee";
+import { ReviewMarquee } from "@/components/site/ReviewMarquee";
 import {
   BLOG_POSTS,
   CASE_STUDIES,
-  FAQS,
   INDUSTRIES,
-  REVIEWS,
   SERVICES,
   SITE_URL,
   TAGLINE,
@@ -71,18 +64,6 @@ export const Route = createFileRoute("/")({
               "AI automation agency helping plumbers, dentists, and real estate agents automate lead follow-up and appointment booking.",
             areaServed: { "@type": "Country", name: "United States" },
             serviceType: SERVICES.map((s) => s.name),
-          }),
-        },
-        {
-          type: "application/ld+json",
-          children: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: FAQS.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
           }),
         },
       ],
@@ -181,6 +162,11 @@ function Home() {
           ))}
         </ul>
       </section>
+
+      <Marquee
+        items={[...SERVICES.map((s) => s.name), ...INDUSTRIES]}
+        className="bg-surface/60"
+      />
 
       <section className="relative overflow-hidden">
         <img
@@ -317,48 +303,12 @@ function Home() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface/40">
-        <div className="mx-auto max-w-3xl px-4 py-14">
-          <h2 className="text-2xl font-extrabold md:text-4xl">Frequently asked questions</h2>
-          <Accordion type="single" collapsible className="mt-6">
-            {FAQS.map((faq) => (
-              <AccordionItem key={faq.q} value={faq.q}>
-                <AccordionTrigger className="text-left text-base font-semibold">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-
-      <section className="border-y border-border bg-surface/40">
-        <div className="mx-auto max-w-6xl px-4 py-14">
+      <section className="border-y border-border bg-surface/40 py-14">
+        <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl font-extrabold md:text-4xl">What clients say</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {REVIEWS.map((review, i) => (
-              <Reveal key={i} delay={i * 120} className="surface-card p-6">
-                <blockquote>
-                <div className="flex gap-1" aria-label={`${review.rating} out of 5 stars`}>
-                  {Array.from({ length: review.rating }).map((_, s) => (
-                    <Star key={s} className="size-4 fill-primary text-primary" aria-hidden="true" />
-                  ))}
-                </div>
-                <p className="mt-4 text-sm text-muted-foreground">“{review.quote}”</p>
-                <footer className="mt-4 text-sm font-semibold">
-                  {review.name}
-                  <span className="block text-xs font-normal text-muted-foreground">
-                    {review.business}
-                  </span>
-                </footer>
-                </blockquote>
-              </Reveal>
-            ))}
-          </div>
+        </div>
+        <div className="mt-8">
+          <ReviewMarquee />
         </div>
       </section>
 
