@@ -317,48 +317,12 @@ function Home() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-surface/40">
-        <div className="mx-auto max-w-3xl px-4 py-14">
-          <h2 className="text-2xl font-extrabold md:text-4xl">Frequently asked questions</h2>
-          <Accordion type="single" collapsible className="mt-6">
-            {FAQS.map((faq) => (
-              <AccordionItem key={faq.q} value={faq.q}>
-                <AccordionTrigger className="text-left text-base font-semibold">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-
-      <section className="border-y border-border bg-surface/40">
-        <div className="mx-auto max-w-6xl px-4 py-14">
+      <section className="border-y border-border bg-surface/40 py-14">
+        <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-2xl font-extrabold md:text-4xl">What clients say</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {REVIEWS.map((review, i) => (
-              <Reveal key={i} delay={i * 120} className="surface-card p-6">
-                <blockquote>
-                <div className="flex gap-1" aria-label={`${review.rating} out of 5 stars`}>
-                  {Array.from({ length: review.rating }).map((_, s) => (
-                    <Star key={s} className="size-4 fill-primary text-primary" aria-hidden="true" />
-                  ))}
-                </div>
-                <p className="mt-4 text-sm text-muted-foreground">“{review.quote}”</p>
-                <footer className="mt-4 text-sm font-semibold">
-                  {review.name}
-                  <span className="block text-xs font-normal text-muted-foreground">
-                    {review.business}
-                  </span>
-                </footer>
-                </blockquote>
-              </Reveal>
-            ))}
-          </div>
+        </div>
+        <div className="mt-8">
+          <ReviewMarquee />
         </div>
       </section>
 
