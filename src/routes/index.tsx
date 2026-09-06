@@ -5,7 +5,6 @@ import {
   MessageSquare,
   CalendarCheck,
   Wrench,
-  Star,
   ShieldCheck,
   Zap,
   FileCheck,
@@ -163,6 +162,11 @@ function Home() {
           ))}
         </ul>
       </section>
+
+      <Marquee
+        items={[...SERVICES.map((s) => s.name), ...INDUSTRIES]}
+        className="bg-surface/60"
+      />
 
       <section className="relative overflow-hidden">
         <img
