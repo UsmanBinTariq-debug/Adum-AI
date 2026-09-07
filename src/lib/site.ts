@@ -3,7 +3,7 @@ export const SITE_URL = "https://adumai.com";
 export const CONTACT_EMAIL = "hello@adumai.com";
 
 /** Leave empty to show a "add your number" placeholder. */
-export const CONTACT_PHONE = "";
+export const CONTACT_PHONE: string = "";
 
 /** Leave `url` empty to show a placeholder until the profile exists. */
 export const SOCIAL_LINKS: { label: string; url: string }[] = [
