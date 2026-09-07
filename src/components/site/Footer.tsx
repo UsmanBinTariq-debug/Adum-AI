@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.png.asset.json";
-import { NAV_LINKS, TAGLINE } from "@/lib/site";
+import { CONTACT_EMAIL, CONTACT_PHONE, NAV_LINKS, SOCIAL_LINKS, TAGLINE } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -51,7 +51,48 @@ export function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-sm font-semibold">Industries we serve</h2>
+          <h2 className="text-sm font-semibold">Get in touch</h2>
+          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+            <li>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-primary">
+                {CONTACT_EMAIL}
+              </a>
+            </li>
+            <li>
+              {CONTACT_PHONE ? (
+                <a
+                  href={`tel:${CONTACT_PHONE.replace(/[^\d+]/g, "")}`}
+                  className="hover:text-primary"
+                >
+                  {CONTACT_PHONE}
+                </a>
+              ) : (
+                <span>Phone — add your number</span>
+              )}
+            </li>
+          </ul>
+
+          <h2 className="mt-6 text-sm font-semibold">Follow us</h2>
+          <ul className="mt-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
+            {SOCIAL_LINKS.map((social) => (
+              <li key={social.label}>
+                {social.url ? (
+                  <a
+                    href={social.url}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="hover:text-primary"
+                  >
+                    {social.label}
+                  </a>
+                ) : (
+                  <span>{social.label}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="mt-6 text-sm font-semibold">Industries we serve</h2>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>Plumbers</li>
             <li>Dentists</li>
