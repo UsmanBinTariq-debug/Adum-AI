@@ -22,7 +22,7 @@ A results band placed right after the top of the homepage (below the strip of se
 - 5x faster lead follow-up
 - Under 3 min average first response
 
-Each number has a short caption naming the industry it came from, so the claim is traceable to a real case study. Counting is skipped for visitors who prefer reduced motion — they see the final numbers immediately. The same band is reused on each industry page with that industry's own numbers.
+Each number has a short caption naming the industry it came from, so the claim is traceable to a real case study. Counting is skipped for visitors who prefer reduced motion — they see the final numbers immediately. The same band is reused on each industry page with that industry's own numbers, and the band ends with a "See the full story →" link to that industry's full case study — the numbers grab attention, the story closes it.
 
 ## Technical notes
 
