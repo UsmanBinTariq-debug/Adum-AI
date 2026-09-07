@@ -76,6 +76,37 @@ function BlogPostPage() {
               <p key={i}>{paragraph}</p>
             ))}
           </div>
+          <div className="glass-card mt-8 flex flex-wrap items-center gap-3 p-5">
+            <p className="text-sm font-semibold">Found this useful? Share it.</p>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                `${SITE_URL}/blog/${post.slug}`,
+              )}`}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm font-semibold text-primary hover:underline"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                `${SITE_URL}/blog/${post.slug}`,
+              )}`}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sm font-semibold text-primary hover:underline"
+            >
+              Facebook
+            </a>
+            <a
+              href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(
+                `${SITE_URL}/blog/${post.slug}`,
+              )}`}
+              className="text-sm font-semibold text-primary hover:underline"
+            >
+              Email
+            </a>
+          </div>
           <p className="mt-8 text-sm text-muted-foreground">
             Related:{" "}
             <LinkButton to="/services" variant="ghost">
