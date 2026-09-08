@@ -4,8 +4,9 @@ import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
 import { Reveal } from "@/components/site/Reveal";
-import { SERVICES, breadcrumbSchema, pageMeta } from "@/lib/site";
-import { INDUSTRY_IMAGES } from "@/lib/images";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { INDUSTRY_PAGES, SERVICES, breadcrumbSchema, pageMeta } from "@/lib/site";
+import { industryImage } from "@/lib/images";
 
 const CRUMBS = [
   { name: "Home", path: "/" },
