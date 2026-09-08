@@ -317,6 +317,8 @@ export const HOMEPAGE_STATS: Stat[] = [
 export type IndustryPageData = {
   /** URL slug, e.g. "plumbers" for /plumbers. */
   slug: string;
+  /** Typed route path for Link components. */
+  path: "/plumbers" | "/dentists" | "/real-estate";
   /** Must match a key in INDUSTRY_IMAGES and the industry on a CASE_STUDIES entry. */
   industry: string;
   metaTitle: string;
