@@ -12,7 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DentistsRouteImport } from './routes/dentists'
+import { Route as PlumbersRouteImport } from './routes/plumbers'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as RealEstateRouteImport } from './routes/real-estate'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
@@ -36,9 +39,24 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DentistsRoute = DentistsRouteImport.update({
+  id: '/dentists',
+  path: '/dentists',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlumbersRoute = PlumbersRouteImport.update({
+  id: '/plumbers',
+  path: '/plumbers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RealEstateRoute = RealEstateRouteImport.update({
+  id: '/real-estate',
+  path: '/real-estate',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -81,7 +99,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dentists': typeof DentistsRoute
+  '/plumbers': typeof PlumbersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/real-estate': typeof RealEstateRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
@@ -94,7 +115,10 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dentists': typeof DentistsRoute
+  '/plumbers': typeof PlumbersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/real-estate': typeof RealEstateRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
@@ -108,7 +132,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
+  '/dentists': typeof DentistsRoute
+  '/plumbers': typeof PlumbersRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/real-estate': typeof RealEstateRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/thank-you': typeof ThankYouRoute
@@ -123,7 +150,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dentists'
+    | '/plumbers'
     | '/privacy-policy'
+    | '/real-estate'
     | '/services'
     | '/sitemap.xml'
     | '/thank-you'
@@ -136,7 +166,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dentists'
+    | '/plumbers'
     | '/privacy-policy'
+    | '/real-estate'
     | '/services'
     | '/sitemap.xml'
     | '/thank-you'
@@ -149,7 +182,10 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
+    | '/dentists'
+    | '/plumbers'
     | '/privacy-policy'
+    | '/real-estate'
     | '/services'
     | '/sitemap.xml'
     | '/thank-you'
@@ -163,7 +199,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
+  DentistsRoute: typeof DentistsRoute
+  PlumbersRoute: typeof PlumbersRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RealEstateRoute: typeof RealEstateRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ThankYouRoute: typeof ThankYouRoute
@@ -196,11 +235,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dentists': {
+      id: '/dentists'
+      path: '/dentists'
+      fullPath: '/dentists'
+      preLoaderRoute: typeof DentistsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plumbers': {
+      id: '/plumbers'
+      path: '/plumbers'
+      fullPath: '/plumbers'
+      preLoaderRoute: typeof PlumbersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy-policy': {
       id: '/privacy-policy'
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/real-estate': {
+      id: '/real-estate'
+      path: '/real-estate'
+      fullPath: '/real-estate'
+      preLoaderRoute: typeof RealEstateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services': {
@@ -259,7 +319,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
+  DentistsRoute: DentistsRoute,
+  PlumbersRoute: PlumbersRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RealEstateRoute: RealEstateRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ThankYouRoute: ThankYouRoute,

@@ -297,3 +297,215 @@ export const REVIEWS = [
   },
 ];
 
+export type Stat = {
+  /** Number that animates counting up. */
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+  /** Which industry the number comes from — shown as a caption. */
+  source: string;
+};
+
+export const HOMEPAGE_STATS: Stat[] = [
+  { value: 3, suffix: "x", label: "after-hours jobs booked", source: "Plumbers" },
+  { value: 41, prefix: "-", suffix: "%", label: "no-shows", source: "Dentists" },
+  { value: 5, suffix: "x", label: "faster lead follow-up", source: "Real Estate Agents" },
+  { value: 3, prefix: "under ", suffix: " min", label: "average first response", source: "All clients" },
+];
+
+export type IndustryPageData = {
+  /** URL slug, e.g. "plumbers" for /plumbers. */
+  slug: string;
+  /** Typed route path for Link components. */
+  path: "/plumbers" | "/dentists" | "/real-estate";
+  /** Must match a key in INDUSTRY_IMAGES and the industry on a CASE_STUDIES entry. */
+  industry: string;
+  metaTitle: string;
+  metaDescription: string;
+  headline: string;
+  sub: string;
+  pains: { title: string; body: string }[];
+  /** Per-service one-liner written for this industry, keyed by service slug. */
+  serviceAngles: Record<string, string>;
+  faq: { q: string; a: string }[];
+  /** Slug of the case study this page links to. */
+  caseStudySlug: string;
+};
+
+export const INDUSTRY_PAGES: IndustryPageData[] = [
+  {
+    slug: "plumbers",
+    path: "/plumbers",
+    industry: "Plumbers",
+    metaTitle: "AI Automation for Plumbers | Adum AI",
+    metaDescription:
+      "Every emergency call answered 24/7, every lead replied to in under 3 minutes, jobs booked straight into your calendar. Built for plumbing companies.",
+    headline: "Plumbers: the call you're under a sink for is worth $400 to someone else",
+    sub: "Emergency callers hire whoever picks up first. We install the AI system that makes sure that is always you — 24/7, without hiring anyone.",
+    pains: [
+      {
+        title: "After-hours calls go to voicemail",
+        body: "The highest-value jobs — burst pipes, no heat, flooding — come in after 7pm. Callers don't leave messages; they dial the next plumber on the list.",
+      },
+      {
+        title: "You can't answer on the job",
+        body: "When your hands are under a sink or you're driving between jobs, the phone rings out. Each missed call is a job you never knew existed.",
+      },
+      {
+        title: "Paid leads go cold in minutes",
+        body: "Google Ads and marketplace leads cost real money. If the reply takes an hour, you've paid for a lead that already hired your competitor.",
+      },
+      {
+        title: "Follow-up depends on memory",
+        body: "Quotes sent, half-booked jobs, customers who said 'I'll call back'. Without a system, follow-up happens when someone remembers — which means it doesn't.",
+      },
+    ],
+    serviceAngles: {
+      "instant-lead-response":
+        "Web, Facebook and marketplace leads get a reply in under 3 minutes — even while you're under a sink.",
+      "ai-voice-receptionist":
+        "Answers on the first ring, asks what the job is and how urgent, then books into your dispatch calendar.",
+      "missed-call-recovery":
+        "Any call that still slips gets an instant text-back with a booking link, and you get an SMS alert.",
+      "appointment-reminders":
+        "Customers confirm the day before, so your schedule stays full and drive time isn't wasted on no-answers.",
+      "retainer-maintenance":
+        "We watch every workflow so the system keeps answering through busy season and holidays.",
+    },
+    faq: [
+      {
+        q: "Can it tell an emergency from a routine job?",
+        a: "Yes. The receptionist asks your qualifying questions — job type, urgency, location — and flags emergencies to you instantly by text, while booking routine work into normal slots.",
+      },
+      {
+        q: "Does it work with my existing phone number?",
+        a: "Yes. Your number stays the same. We add answering and text-back on top of it — no porting, no new hardware, nothing for customers to relearn.",
+      },
+      {
+        q: "What if a customer insists on talking to a person?",
+        a: "The system takes their details, tells them you'll call back, and texts you the summary immediately. You call back knowing the job, the urgency and the address.",
+      },
+    ],
+    caseStudySlug: "plumbing-after-hours-leads",
+  },
+  {
+    slug: "dentists",
+    path: "/dentists",
+    industry: "Dentists",
+    metaTitle: "AI Automation for Dentists | Adum AI",
+    metaDescription:
+      "Cut no-shows, answer every new-patient inquiry instantly, and free your front desk from reminder calls. AI systems built for dental practices.",
+    headline: "Dentists: every empty chair is fixed cost with no revenue attached",
+    sub: "We install the AI system that answers every new-patient inquiry instantly, reminds patients automatically, and refills cancelled slots from your waitlist.",
+    pains: [
+      {
+        title: "New-patient forms sit unanswered",
+        body: "A new-patient inquiry answered tomorrow is usually a patient lost. Practices that reply in minutes win the booking.",
+      },
+      {
+        title: "The front desk can't call everyone",
+        body: "Reminder calls compete with check-ins, insurance and the phone. Many patients simply never get reminded — and some never show.",
+      },
+      {
+        title: "Late cancellations leave holes",
+        body: "A cancellation at 4pm for a 9am slot is lost revenue unless someone works the waitlist fast — and nobody has time to.",
+      },
+      {
+        title: "The phone rings during procedures",
+        body: "Every unanswered call is either a new patient lost or an existing one left waiting. Hiring cover for it costs more than the calls are worth.",
+      },
+    ],
+    serviceAngles: {
+      "instant-lead-response":
+        "New-patient inquiries from your site or Google get an instant reply with real appointment slots.",
+      "ai-voice-receptionist":
+        "Overflow and after-hours calls get answered, qualified and booked instead of going to voicemail.",
+      "missed-call-recovery":
+        "Any missed call gets an instant text-back, so a busy front desk stops costing you new patients.",
+      "appointment-reminders":
+        "Three-touch SMS/email reminders with one-tap confirm, plus automatic waitlist refill on cancellations.",
+      "retainer-maintenance":
+        "We monitor and tune the system monthly, so no-show rates keep falling instead of creeping back.",
+    },
+    faq: [
+      {
+        q: "Does it work with our practice management software?",
+        a: "In most cases yes — we integrate with common dental scheduling systems. If yours is unusual, email us the name of it and we'll confirm before any build starts.",
+      },
+      {
+        q: "Will patients know they're talking to AI?",
+        a: "The messaging is written in your practice's voice and reviewed by you before launch. Most patients care that they got an answer instantly — not who typed it.",
+      },
+      {
+        q: "How fast do no-shows actually drop?",
+        a: "Practices running the full reminder and waitlist sequence typically see a measurable drop within the first month, and the full effect within a quarter.",
+      },
+    ],
+    caseStudySlug: "dental-no-show-reduction",
+  },
+  {
+    slug: "real-estate",
+    path: "/real-estate",
+    industry: "Real Estate Agents",
+    metaTitle: "AI Automation for Real Estate Agents | Adum AI",
+    metaDescription:
+      "Reply to every portal lead in minutes, qualify budget and timeline automatically, and book more viewings while you're out showing property.",
+    headline: "Real estate agents: the lead that waits four hours hires someone faster",
+    sub: "Portal leads contact three or four agents at once and work with whoever replies first. We install the AI system that makes sure that is you — even mid-showing.",
+    pains: [
+      {
+        title: "Leads arrive while you're showing",
+        body: "Portal inquiries land all day, exactly when you're away from a desk. By the time you reply, the buyer has already booked with a faster agent.",
+      },
+      {
+        title: "Qualifying eats your evenings",
+        body: "Budget, timeline, pre-approval, area — you find out whether a lead is real after 20 minutes of texting you could have spent with clients.",
+      },
+      {
+        title: "Old leads go untouched",
+        body: "The database of past inquiries is where the next quarter's listings live — but nobody has time to work it consistently.",
+      },
+      {
+        title: "Viewings get booked by whoever answers",
+        body: "Speed to lead decides conversion more than brand, reviews or experience. Replying first is the whole game.",
+      },
+    ],
+    serviceAngles: {
+      "instant-lead-response":
+        "Every portal and website inquiry gets a reply in minutes that asks budget, timeline and area — while you're still in the showing.",
+      "ai-voice-receptionist":
+        "Calls about listings get answered, qualified and turned into viewing bookings instead of voicemails.",
+      "missed-call-recovery":
+        "Missed calls get an instant text-back, so a buyer who rang twice doesn't move to the next agent.",
+      "appointment-reminders":
+        "Viewing reminders go out automatically, and no-shows get rebooked without you touching your phone.",
+      "retainer-maintenance":
+        "We keep the system tuned to your listings, seasons and scripts as they change month to month.",
+    },
+    faq: [
+      {
+        q: "Does it connect to my CRM?",
+        a: "Yes. Qualified leads land in your CRM with the answers to the qualifying questions already attached, so you pick up warm conversations, not cold ones.",
+      },
+      {
+        q: "Can it match my tone of voice?",
+        a: "The scripts are written for your market and approved by you before anything goes live. It sounds like your best follow-up, on your best day, every time.",
+      },
+      {
+        q: "What happens with leads that aren't ready yet?",
+        a: "They go into an automated nurture sequence — periodic check-ins until they're ready to talk, so nobody in your database is ever fully cold.",
+      },
+    ],
+    caseStudySlug: "real-estate-lead-speed",
+  },
+];
+
+export function industryPage(slug: string): IndustryPageData | undefined {
+  return INDUSTRY_PAGES.find((p) => p.slug === slug);
+}
+
+export function caseStudyBySlug(slug: string): CaseStudy | undefined {
+  return CASE_STUDIES.find((c) => c.slug === slug);
+}
+

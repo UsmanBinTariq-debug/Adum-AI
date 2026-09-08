@@ -1,11 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Breadcrumbs } from "@/components/site/Breadcrumbs";
 import { PageHero, CtaBand } from "@/components/site/Sections";
 import { LinkButton } from "@/components/site/CtaButton";
 import { Reveal } from "@/components/site/Reveal";
-import { SERVICES, breadcrumbSchema, pageMeta } from "@/lib/site";
-import { INDUSTRY_IMAGES } from "@/lib/images";
+import { INDUSTRY_PAGES, SERVICES, breadcrumbSchema, pageMeta } from "@/lib/site";
+import { industryImage } from "@/lib/images";
 
 const CRUMBS = [
   { name: "Home", path: "/" },
@@ -41,24 +41,32 @@ function ServicesPage() {
 
       <section className="mx-auto max-w-6xl px-4">
         <div className="grid gap-4 sm:grid-cols-3">
-          {Object.entries(INDUSTRY_IMAGES).map(([name, img], i) => (
-            <Reveal
-              as="figure"
-              key={name}
-              delay={i * 120}
-              className="surface-card overflow-hidden"
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                width={1200}
-                height={800}
-                className="h-40 w-full object-cover"
-              />
-              <figcaption className="px-5 py-3 text-sm font-semibold">{name}</figcaption>
-            </Reveal>
-          ))}
+          {INDUSTRY_PAGES.map((page, i) => {
+            const img = industryImage(page.industry);
+            return (
+              <Reveal
+                as="figure"
+                key={page.slug}
+                delay={i * 120}
+                className="surface-card overflow-hidden"
+              >
+                <Link to={page.path} className="group block">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    width={1200}
+                    height={800}
+                    className="h-40 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <figcaption className="flex items-center justify-between px-5 py-3 text-sm font-semibold">
+                    {page.industry}
+                    <span className="text-primary group-hover:underline">Explore →</span>
+                  </figcaption>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 

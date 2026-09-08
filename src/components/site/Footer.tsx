@@ -1,6 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.png.asset.json";
-import { CONTACT_EMAIL, CONTACT_PHONE, NAV_LINKS, SOCIAL_LINKS, TAGLINE } from "@/lib/site";
+import {
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  INDUSTRY_PAGES,
+  NAV_LINKS,
+  SOCIAL_LINKS,
+  TAGLINE,
+} from "@/lib/site";
 
 export function Footer() {
   return (
@@ -94,9 +101,13 @@ export function Footer() {
 
           <h2 className="mt-6 text-sm font-semibold">Industries we serve</h2>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-            <li>Plumbers</li>
-            <li>Dentists</li>
-            <li>Real Estate Agents</li>
+            {INDUSTRY_PAGES.map((page) => (
+              <li key={page.slug}>
+                <Link to={page.path} className="hover:text-primary">
+                  {page.industry}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
