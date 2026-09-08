@@ -28,15 +28,11 @@ export function IndustryPage({ page }: { page: IndustryPageData }) {
   const img = industryImage(page.industry);
   const caseStudy = caseStudyBySlug(page.caseStudySlug);
   const stats: Stat[] = (caseStudy?.results ?? []).map((r) => {
-    const match = r.value.match(/^(-?)\s*(\d+(?:\.\d+)?)\s*(.*)$/);
-    const value = match ? Number.parseFloat(match[2] ?? "0") : 0;
-    const sign = match?.[1] ?? "";
-    const suffix = match?.[3] ?? "";
-    const suffixPrefix = suffix.match(/^\s*(x|%)\s*(.*)$/);
+    const match = r.value.match(/^([^\d]*?)(\d+(?:\.\d+)?)(.*)$/);
     return {
-      value,
-      prefix: sign || (suffixPrefix ? "" : "") || undefined,
-      suffix: suffix || undefined,
+      value: match ? Number.parseFloat(match[2] ?? "0") : 0,
+      prefix: match?.[1]?.trim() ? `${match[1].trim()} ` : undefined,
+      suffix: match?.[3]?.trim() ? ` ${match[3].trim()}` : undefined,
       label: r.label,
       source: page.industry,
     };
