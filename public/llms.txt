@@ -10,6 +10,12 @@
 - Appointment Reminder & No-Show Recovery
 - Monthly Retainer & Maintenance
 
+## Industries
+
+- Plumbers: https://adumai.com/plumbers
+- Dentists: https://adumai.com/dentists
+- Real Estate Agents: https://adumai.com/real-estate
+
 ## Contact
 
 - Website: https://adumai.com
