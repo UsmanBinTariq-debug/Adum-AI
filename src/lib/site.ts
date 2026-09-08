@@ -336,6 +336,7 @@ export type IndustryPageData = {
 export const INDUSTRY_PAGES: IndustryPageData[] = [
   {
     slug: "plumbers",
+    path: "/plumbers",
     industry: "Plumbers",
     metaTitle: "AI Automation for Plumbers | Adum AI",
     metaDescription:
@@ -390,6 +391,7 @@ export const INDUSTRY_PAGES: IndustryPageData[] = [
   },
   {
     slug: "dentists",
+    path: "/dentists",
     industry: "Dentists",
     metaTitle: "AI Automation for Dentists | Adum AI",
     metaDescription:
@@ -444,6 +446,7 @@ export const INDUSTRY_PAGES: IndustryPageData[] = [
   },
   {
     slug: "real-estate",
+    path: "/real-estate",
     industry: "Real Estate Agents",
     metaTitle: "AI Automation for Real Estate Agents | Adum AI",
     metaDescription:
