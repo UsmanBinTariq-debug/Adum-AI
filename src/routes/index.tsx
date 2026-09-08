@@ -202,7 +202,7 @@ function Home() {
                 delay={i * 120}
                 className="surface-card overflow-hidden"
               >
-                <Link to={`/${page.slug}` as "/plumbers"} className="group block">
+                <Link to={page.path} className="group block">
                   <img
                     src={img.src}
                     alt={img.alt}
