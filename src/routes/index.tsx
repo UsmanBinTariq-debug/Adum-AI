@@ -17,10 +17,12 @@ import { Reveal } from "@/components/site/Reveal";
 import { ScrollSteps } from "@/components/site/ScrollSteps";
 import { Marquee } from "@/components/site/Marquee";
 import { ReviewMarquee } from "@/components/site/ReviewMarquee";
+import { StatsBand } from "@/components/site/StatsBand";
 import {
   BLOG_POSTS,
   CASE_STUDIES,
-  INDUSTRIES,
+  HOMEPAGE_STATS,
+  INDUSTRY_PAGES,
   SERVICES,
   SITE_URL,
   TAGLINE,
@@ -164,9 +166,11 @@ function Home() {
       </section>
 
       <Marquee
-        items={[...SERVICES.map((s) => s.name), ...INDUSTRIES]}
+        items={[...SERVICES.map((s) => s.name), ...INDUSTRY_PAGES.map((p) => p.industry)]}
         className="bg-surface/60"
       />
+
+      <StatsBand stats={HOMEPAGE_STATS} title="Results from real installs" />
 
       <section className="relative overflow-hidden">
         <img
@@ -189,24 +193,29 @@ function Home() {
           Built specifically for
         </p>
         <ul className="mt-6 grid gap-5 md:grid-cols-3">
-          {INDUSTRIES.map((industry, i) => {
-            const img = industryImage(industry);
+          {INDUSTRY_PAGES.map((page, i) => {
+            const img = industryImage(page.industry);
             return (
               <Reveal
                 as="li"
-                key={industry}
+                key={page.slug}
                 delay={i * 120}
                 className="surface-card overflow-hidden"
               >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  width={1200}
-                  height={800}
-                  className="h-44 w-full object-cover"
-                />
-                <p className="px-5 py-4 text-sm font-semibold">{industry}</p>
+                <Link to={`/${page.slug}` as "/plumbers"} className="group block">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    width={1200}
+                    height={800}
+                    className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <p className="flex items-center justify-between px-5 py-4 text-sm font-semibold">
+                    {page.industry}
+                    <span className="text-primary group-hover:underline">Explore →</span>
+                  </p>
+                </Link>
               </Reveal>
             );
           })}
