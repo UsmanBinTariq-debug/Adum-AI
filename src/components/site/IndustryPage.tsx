@@ -29,13 +29,14 @@ export function IndustryPage({ page }: { page: IndustryPageData }) {
   const caseStudy = caseStudyBySlug(page.caseStudySlug);
   const stats: Stat[] = (caseStudy?.results ?? []).map((r) => {
     const match = r.value.match(/^([^\d]*?)(\d+(?:\.\d+)?)(.*)$/);
-    return {
+    const stat: Stat = {
       value: match ? Number.parseFloat(match[2] ?? "0") : 0,
-      prefix: match?.[1]?.trim() ? `${match[1].trim()} ` : undefined,
-      suffix: match?.[3]?.trim() ? ` ${match[3].trim()}` : undefined,
       label: r.label,
       source: page.industry,
     };
+    if (match?.[1]?.trim()) stat.prefix = `${match[1].trim()} `;
+    if (match?.[3]?.trim()) stat.suffix = ` ${match[3].trim()}`;
+    return stat;
   });
 
   return (
