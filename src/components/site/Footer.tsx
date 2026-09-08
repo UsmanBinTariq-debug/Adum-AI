@@ -9,6 +9,8 @@ import {
   TAGLINE,
 } from "@/lib/site";
 
+const logoSrc = "/logo.png";
+
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface/40">
@@ -16,7 +18,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2">
             <img
-              src={logo.url}
+              src={logoSrc}
               alt="Adum AI logo — robotic hand holding a glowing AI brain"
               width={40}
               height={40}

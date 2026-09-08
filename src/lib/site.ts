@@ -1,6 +1,6 @@
 export const SITE_URL = "https://adumai.com";
 
-export const CONTACT_EMAIL = "hello@adumai.com";
+export const CONTACT_EMAIL = "contact@adumai.com";
 
 /** Leave empty to show a "add your number" placeholder. */
 export const CONTACT_PHONE: string = "";
